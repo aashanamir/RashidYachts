@@ -1,0 +1,80 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  margin-top: 40px; /* Adjusted for better spacing */
+}
+
+.left {
+  flex: 1;
+  min-width: 300px;
+  text-align: center;
+}
+
+.image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px; /* Rounded corners for the image */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.right {
+  flex: 2;
+  min-width: 300px;
+  padding: 20px;
+}
+
+.title {
+  font-size: 28px; /* Increased font size for title */
+  font-weight: bold;
+  margin-bottom: 10px; /* Added margin for better spacing */
+}
+
+.description,
+.payment-plan,
+.download-text {
+  margin: 10px 0;
+  font-size: 16px; /* Adjusted font size for readability */
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 100%; /* Full width form */
+}
+
+.input {
+  padding: 12px; /* Increased padding for input fields */
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px; /* Slightly rounded corners */
+  font-size: 16px; /* Adjusted font size */
+}
+
+.phone-input {
+  margin-top: 10px; /* Added margin to separate phone input */
+}
+
+.phone-input-class {
+  padding: 12px; /* Increased padding for phone input */
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px; /* Adjusted font size */
+}
+
+.button {
+  padding: 12px 20px; /* Increased padding for button */
+  background-color: #f00;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px; /* Adjusted font size */
+  transition: background-color 0.3s ease; /* Smooth hover transition */
+}
+
+.button:hover {
+  background-color: #d00; /* Darker red on hover */
+}

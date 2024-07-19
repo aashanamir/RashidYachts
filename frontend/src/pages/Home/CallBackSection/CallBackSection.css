@@ -1,0 +1,88 @@
+.callback-section {
+  background: linear-gradient(to right, #045762, #615f39);
+  color: white;
+  padding: 60px 20px; /* Adjusted for responsiveness */
+}
+
+.callback-section-container {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.content, .callback-form {
+  flex: 1;
+  margin: 10px;
+}
+
+.content {
+  max-width: 100%;
+}
+
+.callback-form {
+  max-width: 100%;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.phone-input-container {
+  width: 100%;
+  margin: 10px 0;
+}
+
+.phone-input-container .form-input {
+  width: 100%; /* Adjust the width to accommodate the flag dropdown */
+}
+
+.phone-input-container .phone-input-button {
+  border: 1px solid #ccc;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+.form-button {
+  background-color: #d32f2f;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.form-button:hover {
+  background-color: #a32121;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .content, .callback-form {
+    max-width: 100%;
+  }
+.callback-section-container {
+    flex-direction: column;
+  }
+}
