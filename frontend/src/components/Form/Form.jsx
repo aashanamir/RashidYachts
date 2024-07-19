@@ -1,15 +1,57 @@
 import React, { useState } from "react";
+import { FaRegFilePdf } from "react-icons/fa";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
-import { FaFileDownload } from "react-icons/fa";
 import Logo from "../../assets/marina-views-logo.webp";
 import "./Form.css";
+import axios from "axios";
+import { BASEURL } from "../../API/Baseurl";
+import download from "../../assets/down.pdf"; 
 
-const FormComponent = () => {
+const FormComponent = ({logo}) => {
   const [phone, setPhone] = useState("");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [errors, setErrors] = useState({}); 
+
+  // Validate form data
+  const validate = () => {
+    const newErrors = {};
+    if (!name) newErrors.name = "Name is required";
+    if (!email || !/\S+@\S+\.\S+/.test(email)) newErrors.email = "Valid email is required";
+    if (!phone) newErrors.phone = "Phone number is required";
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const downloadBtn = async (e) => {
+    e.preventDefault();
+
+    if (!validate()) return; 
+
+    try {
+      await axios.post(
+        `${BASEURL}download/create`,
+        { phone, name, email },
+        { headers: { "Content-Type": "application/json" } }
+      );
+
+      // Trigger file download
+      const link = document.createElement("a");
+      link.href = download; 
+      link.download = "brochure.pdf"; // Set the desired file name for the download
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <div className="form-container">
-      <img src={Logo} alt="Logo" className="logo" />
+      <img src={logo || Logo} alt="Logo" className="logo" />
       <h2 className="form-title">Rashid Yachts & Marina</h2>
       <h5 className="form-description">
         Discover Unparalleled Luxury at Marina Views' Rashid Yachts & Marina 1,
@@ -19,19 +61,37 @@ const FormComponent = () => {
       <h5 className="form-download-text">
         Download latest Prices for Marina Views
       </h5>
-      <form className="form">
-        <input type="text" placeholder="Your Name" className="form-input" />
-        <input type="email" placeholder="Your Email" className="form-input" />
+      <form className="form" onSubmit={downloadBtn}>
+        <input
+          type="text"
+          placeholder="Your Name"
+          className="form-input"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+        {errors.name && <p className="error-message">{errors.name}</p>}
+        
+        <input
+          type="email"
+          placeholder="Your Email"
+          className="form-input"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        {errors.email && <p className="error-message">{errors.email}</p>}
+        
         <PhoneInput
-          country={"pk"}
+          country="pk"
           value={phone}
           onChange={(phone) => setPhone(phone)}
           containerClass="phone-input-container"
           inputClass="form-input"
           buttonClass="phone-input-button"
         />
+        {errors.phone && <p className="error-message">{errors.phone}</p>}
+        
         <button type="submit" className="form-button">
-          <FaFileDownload /> Click Download Prices.pdf
+          <FaRegFilePdf /> Click Download Prices.pdf
         </button>
       </form>
     </div>

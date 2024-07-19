@@ -3,6 +3,7 @@ import './PaymentPlanSection.css';
 import StartingPrice from "../../../assets/price-tag.webp";
 import PayToBook from "../../../assets/pay-to-book.webp";
 import PaymentPlan from "../../../assets/payment-plan.webp";
+import { FaRegFilePdf } from 'react-icons/fa';
 
 const PaymentPlanSection = () => {
   return (
@@ -32,7 +33,7 @@ const PaymentPlanSection = () => {
         </div>
       </div>
       <a href="/path/to/payment-plan.pdf" className="download-button" download>
-        <button>Download Payment Plan.pdf</button>
+        <button><FaRegFilePdf />Download Payment Plan.pdf</button>
       </a>
     </div>
   );

@@ -53,6 +53,7 @@
 
 .phone-input-container .form-input {
   width: 100%; /* Adjust the width to accommodate the flag dropdown */
+  /* position: relative; */
 }
 
 .phone-input-container .phone-input-button {
@@ -107,4 +108,19 @@
   100% {
     transform: translateX(100%) rotate(60deg); /* Move to off-screen to the right */
   }
+}
+
+
+.error-message {
+  color: red;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+.phone-input{
+  display: none; 
+}
+
+.phone-input-placeholder{
+  display: none; 
 }

@@ -2,10 +2,30 @@ import React, { useState } from "react";
 import "./CallBackSection.css";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
-import { FaFileDownload } from "react-icons/fa";
+import axios from "axios";
+import { BASEURL } from "../../../API/Baseurl";
+import { toast } from "react-toastify";
 
 const CallBackSection = () => {
   const [phone, setPhone] = useState("");
+  const [name, setName] = useState("");
+
+  const callBackAction = async (e) => {
+    e.preventDefault();
+    try {
+      await axios.post(BASEURL + "callback/create", {
+        name,
+        phone,
+      });
+
+      setName("");
+      setPhone("");
+      toast.success("Your Call Request Has Been Created Successfully");
+    } catch (error) {
+      console.log(error);
+      toast.error(error.response.data.message);
+    }
+  };
 
   return (
     <div className="callback-section">
@@ -29,17 +49,28 @@ const CallBackSection = () => {
         <div className="callback-form">
           <h2>GET A CALL BACK</h2>
           <form className="form">
-            <input type="text" placeholder="Your Name" className="form-input" />
+            <input
+              type="text"
+              placeholder="Your Name"
+              className="form-input"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
             <PhoneInput
               country={"pk"}
               value={phone}
               onChange={(phone) => setPhone(phone)}
+              placeholder="Enter phone number"
               containerClass="phone-input-container"
               inputClass="form-input"
               buttonClass="phone-input-button"
             />
-            <button type="submit" className="form-button">
-             Submit
+            <button
+              onClick={callBackAction}
+              type="submit"
+              className="form-button"
+            >
+              Submit
             </button>
           </form>
         </div>

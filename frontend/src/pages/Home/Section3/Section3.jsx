@@ -1,6 +1,7 @@
 import React from 'react';
 import "./Section3.css";
 import BrochureImage from '../../../assets/about.webp'; // Replace with the correct image path
+import { FaRegFilePdf } from 'react-icons/fa';
 
 const Section3 = () => {
   return (
@@ -16,7 +17,7 @@ const Section3 = () => {
         <p className="description">
           Every day at Ocean Point unfolds with breathtaking vistas, from dawn to dusk. Verdant landscapes, a vibrant poolside, and the iconic Dubai Downtown skyline create a captivating panorama. This visual symphony beautifully contrasts the serene allure of nature with the vibrant energy of city life, offering residents a daily retreat into both tranquility and glamour.
         </p>
-        <button className="download-button">Download Brochure.pdf</button>
+        <button className="download-button"><FaRegFilePdf />Download Brochure.pdf</button>
       </div>
     </div>
   );

@@ -3,6 +3,7 @@ import './FloorPlanSection.css';
 import Floor1 from "../../../assets/Floor1.webp";
 import Floor2 from "../../../assets/Floor1.webp";
 import Floor3 from "../../../assets/Floor3.webp";
+import { FaRegFilePdf } from 'react-icons/fa';
 
 const FloorPlanSection = () => {
   const [activePlan, setActivePlan] = useState(1);
@@ -43,7 +44,7 @@ const FloorPlanSection = () => {
         <div className="plan-details">
           <h2>{plans[activePlan].title}</h2>
           <a href={plans[activePlan].pdf} className="download-button" download>
-            <button>Download Floor Plan.pdf</button>
+            <button> <FaRegFilePdf /> Download Floor Plan.pdf</button>
           </a>
         </div>
         <img src={plans[activePlan].img} alt={plans[activePlan].title} className="plan-image" />

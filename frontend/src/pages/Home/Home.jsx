@@ -9,6 +9,8 @@ import ImageSlider from '../../components/Slider/Slider';
 import PaymentPlanSection from './PaymentPlanSection/PaymentPlanSection';
 import FloorPlanSection from './FloorPlanSection/FloorPlanSection';
 import CallBackSection from './CallBackSection/CallBackSection';
+import Footer from "../../components/Footer/Footer";
+import Logo from "../../assets/ocean-point.webp";
 
 const Home = () => {
   return (
@@ -17,7 +19,7 @@ const Home = () => {
       <BreakLine/>
       <Section2/>
       <BreakLine/>
-      <Section1/>
+      <Section1 logo={Logo}/>
       <BreakLine/>
       <Section3/>
       <FeaturesSection/>
@@ -25,6 +27,7 @@ const Home = () => {
       <PaymentPlanSection/>
       <FloorPlanSection/>
       <CallBackSection/>
+      <Footer/>
     </div>
   )
 }
