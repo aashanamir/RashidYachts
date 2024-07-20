@@ -18,7 +18,7 @@ const features = [
 
 const FeaturesSection = () => {
   return (
-    <div className="features-container">
+    <div id='Features' className="features-container">
       <h2 className="features-title">Features & Amenities</h2>
       <div className="features-grid">
         {features.map(feature => (

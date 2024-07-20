@@ -17,7 +17,7 @@ const Home = () => {
     <div className='home'>
       <Section1/>
       <BreakLine/>
-      <Section2/>
+      <Section2 />
       <BreakLine/>
       <Section1 logo={Logo}/>
       <BreakLine/>

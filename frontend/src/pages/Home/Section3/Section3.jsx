@@ -5,7 +5,7 @@ import { FaRegFilePdf } from 'react-icons/fa';
 
 const Section3 = () => {
   return (
-    <div id='Section3' className='Section3'>
+    <div id="About" className='Section3'>
       <div className="left">
         <img src={BrochureImage} alt="Marina Views" />
       </div>

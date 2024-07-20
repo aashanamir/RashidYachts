@@ -28,7 +28,7 @@ const CallBackSection = () => {
   };
 
   return (
-    <div className="callback-section">
+    <div id="Contact" className="callback-section">
       <div className="callback-section-container">
         <div className="content">
           <h2>EMAAR</h2>

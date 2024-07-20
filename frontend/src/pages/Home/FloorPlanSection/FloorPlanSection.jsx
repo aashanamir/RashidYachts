@@ -27,7 +27,7 @@ const FloorPlanSection = () => {
   };
 
   return (
-    <div className="floor-plan-container">
+    <div id='Floor' className="floor-plan-container">
       <h1>Floor Plan</h1>
       <div className="button-group">
         {Object.keys(plans).map((key) => (

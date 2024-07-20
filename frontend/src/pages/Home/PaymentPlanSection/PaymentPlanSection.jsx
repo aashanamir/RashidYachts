@@ -7,7 +7,7 @@ import { FaRegFilePdf } from 'react-icons/fa';
 
 const PaymentPlanSection = () => {
   return (
-    <div className="payment-plan-container">
+    <div id='Gallery' className="payment-plan-container">
       <h1 className='payment-plan-container-heading'>Payment Plan</h1>
       <div className="payment-plan">
         <div className="plan-item">

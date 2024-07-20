@@ -24,12 +24,12 @@ const Navbar = () => {
         </div>
         <ul className={`navbar-menu ${isOpen ? 'open' : ''}`}>
           <li className="navbar-item active"><a href="#Home">HOME</a></li>
-          <li className="navbar-item"><a href="#">ABOUT</a></li>
-          <li className="navbar-item"><a href="#">FEATURES</a></li>
-          <li className="navbar-item"><a href="#">GALLERY</a></li>
-          <li className="navbar-item"><a href="#">PAYMENT PLAN</a></li>
-          <li className="navbar-item"><a href="#">FLOOR PLAN</a></li>
-          <li className="navbar-item"><a href="#">CONTACT</a></li>
+          <li className="navbar-item"><a href="#About">ABOUT</a></li>
+          <li className="navbar-item"><a href="#Features">FEATURES</a></li>
+          <li className="navbar-item"><a href="#Gallery">GALLERY</a></li>
+          <li className="navbar-item"><a href="#Gallery">PAYMENT PLAN</a></li>
+          <li className="navbar-item"><a href="#Floor">FLOOR PLAN</a></li>
+          <li className="navbar-item"><a href="#Contact">CONTACT</a></li>
         </ul>
       </div>
     </nav>

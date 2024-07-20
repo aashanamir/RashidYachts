@@ -6,7 +6,7 @@ import Logo from "../../../assets/ocean-cove-logo.webp";
 
 const Section2 = () => {
   return (
-    <div id='AnotherSection' className='Section2'>
+    <div className='Section2'>
       <div className="left">
         <FormComponent logo={Logo}/>
       </div>
