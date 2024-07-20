@@ -7,8 +7,8 @@ const router = express.Router();
 
 // Login User ----------------------> Public
 router.route("/create").post( createDetails);
-router.route("/all").get(isAuthenticated , getAllDetails);
-router.route("/del/:id").delete(isAuthenticated , deleteDetails);
+router.route("/all").get( getAllDetails);
+router.route("/del/:id").delete(deleteDetails);
 
 
 export default router;
