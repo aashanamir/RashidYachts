@@ -41,6 +41,7 @@ const DownloadBroucher = () => {
           <tr>
             <th>SR</th>
             <th>Name</th>
+            <th>Email</th>
             <th>Number</th>
             <th>Actions</th>
           </tr>
@@ -50,6 +51,7 @@ const DownloadBroucher = () => {
             <tr key={index}>
               <td>{index + 1}</td>
               <td>{request.name}</td>
+              <td>{request.email}</td>
               <td>{request.phone}</td>
               <td className="action-cell">
                 <button
