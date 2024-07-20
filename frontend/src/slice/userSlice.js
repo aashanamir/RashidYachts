@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 import { BASEURL } from "../API/Baseurl";
+import { toast } from "react-toastify";
 
 const userSlice = createSlice({
   name: "user",
@@ -40,6 +41,7 @@ export function LogInUser(email, password) {
     } catch (error) {
       console.log(error);
       dispatch(setStatus("error"));
+      toast.error(error.response.data.message);
     }
   }
 }
