@@ -1,6 +1,6 @@
 import { catchAsyncError } from "../middlewares/catchAsyncError.js";
 import { CallBack } from "../model/CallBackModel.js";
-import { ErrorHandler } from "../utils/errorHandler.js"; // Ensure ErrorHandler is properly imported
+import { ErrorHandler } from "../utils/ErrorHandler.js"; // Ensure ErrorHandler is properly imported
 
 export const createCallBack = catchAsyncError(async (req, res, next) => {
   const { name, phone } = req.body;
