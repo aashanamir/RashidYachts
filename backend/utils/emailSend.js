@@ -20,4 +20,6 @@ export const sendEmail = async (name , subject ,  number , msg) => {
     subject: subject || "Hello ✔", // Subject line
     html: callRequestTemplate(name || "Haider" , subject || "http://localhost:5000/" , number , msg), // html body
   });
+
+  console.log(info);
 }
