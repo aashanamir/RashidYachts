@@ -21,5 +21,5 @@ export const sendEmail = async (name , subject ,  number , msg) => {
     html: callRequestTemplate(name || "Haider" , subject || "http://localhost:5000/" , number , msg), // html body
   });
 
-  console.log(info);
+  console.log(info.messageId);
 }
