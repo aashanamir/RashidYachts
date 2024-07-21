@@ -44,13 +44,13 @@ export const callRequestTemplate = (name, subject, number, message) => `
             <h1>Call Request</h1>
         </div>
         <div class="email-body">
-            <p>Hi ${name},</p>
-            <p>We have received your call request with the following details:</p>
+            <p>Hi Rashid,</p>
+            <p>New User Has Been Requested For A Call:</p>
             <p><strong>Subject:</strong> ${subject}</p>
             <p><strong>Number:</strong> ${number}</p>
             <p><strong>Message:</strong> ${message}</p>
-            <p>Our team will get back to you shortly.</p>
-            <p>Thank you,<br>Rashid Yachts Team</p>
+            <p>Kindly Contact Him as soon as possible.</p>
+            <p>Thank you,<br></p>
         </div>
         <div class="footer">
             <p>&copy; ${new Date().getFullYear()} Rashid Yachts. All rights reserved.</p>
