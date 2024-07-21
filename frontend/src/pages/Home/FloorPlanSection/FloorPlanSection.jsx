@@ -43,7 +43,7 @@ const FloorPlanSection = () => {
       <div className="plan-content">
         <div className="plan-details">
           <h2>{plans[activePlan].title}</h2>
-          <a href={plans[activePlan].pdf} className="download-button" download>
+          <a href={plans[activePlan].pdf} className="floor-plan-button" download>
             <button> <FaRegFilePdf /> Download Floor Plan.pdf</button>
           </a>
         </div>

@@ -106,9 +106,8 @@
   }
 
   .download-button button {
-    width: 50%;
-    /* Full width button on smaller screens */
+    width: 70%;
     box-sizing: border-box;
-    /* Ensure padding doesn't break the layout */
+    font-size: 14px;
   }
 }
