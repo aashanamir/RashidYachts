@@ -33,7 +33,7 @@ const PaymentPlanSection = () => {
         </div>
       </div>
       <a href="/path/to/payment-plan.pdf" className="download-button" download>
-        <button><FaRegFilePdf />Download Payment Plan.pdf</button>
+        <button ><FaRegFilePdf />Download Payment Plan.pdf</button>
       </a>
     </div>
   );

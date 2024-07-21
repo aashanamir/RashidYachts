@@ -45,11 +45,11 @@ h1 {
   margin-bottom: 20px;
 }
 
-.download-button {
+.floor-plan-button {
   margin-top: 20px;
 }
 
-.download-button button {
+.floor-plan-button button {
   background-color: #d32f2f;
   color: white;
   border: none;
@@ -58,7 +58,7 @@ h1 {
   cursor: pointer;
 }
 
-.download-button button:hover {
+.floor-plan-button button:hover {
   background-color: #a32121;
 }
 
@@ -83,7 +83,7 @@ h1 {
     height: auto;
   }
 
-  .download-button button {
+  .floor-plan-button button {
     width: 100%;
     box-sizing: border-box;
   }

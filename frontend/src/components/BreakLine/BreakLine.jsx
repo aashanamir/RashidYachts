@@ -3,7 +3,7 @@ import React from 'react'
 const BreakLine = () => {
   return (
     <hr style={{
-      color: "#c92034",
+      color: "#000",
       border : "1px solid",
       margin : "50px auto",
       width : "80%"
