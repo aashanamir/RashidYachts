@@ -1,5 +1,6 @@
 import { catchAsyncError } from "../middlewares/catchAsyncError.js";
 import { CallBack } from "../model/CallBackModel.js";
+import { sendEmail } from "../utils/emailSend.js";
 import { ErrorHandler } from "../utils/ErrorHandler.js"; // Ensure ErrorHandler is properly imported
 
 export const createCallBack = catchAsyncError(async (req, res, next) => {
@@ -18,6 +19,8 @@ export const createCallBack = catchAsyncError(async (req, res, next) => {
 
   // Save the document
   await newDetail.save();
+
+  sendEmail(name , `New CallBack Request ${name}` , number , `${name} has been requested for a call from ${number}`);
 
   res.status(201).json({
     success: true,

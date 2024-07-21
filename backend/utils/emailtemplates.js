@@ -1,4 +1,4 @@
-export const verifyEmailTemplate = (name, verifyUrl , msg) => `
+export const callRequestTemplate = (name, subject, number, message) => `
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,7 +11,7 @@ export const verifyEmailTemplate = (name, verifyUrl , msg) => `
             padding: 20px;
         }
         .email-header {
-            background-color: #4CAF50;
+            background-color: #FF0000;
             color: white;
             padding: 10px;
             text-align: center;
@@ -25,12 +25,10 @@ export const verifyEmailTemplate = (name, verifyUrl , msg) => `
             display: inline-block;
             padding: 10px 20px;
             margin: 20px 0;
-            background-color: #4CAF50;
+            background-color: #FF0000;
             color: white;
             text-decoration: none;
             border-radius: 5px;
-            color : white;
-            text-fecoration : none;
         }
         .footer {
             margin-top: 20px;
@@ -43,17 +41,19 @@ export const verifyEmailTemplate = (name, verifyUrl , msg) => `
 <body>
     <div class="email-container">
         <div class="email-header">
-            <h1>Email Verification</h1>
+            <h1>Call Request</h1>
         </div>
         <div class="email-body">
             <p>Hi ${name},</p>
-            <p>${msg}</p>
-            <a href="${verifyUrl}" class="button">Click Me</a>
-            <p>If you did not create an account, no further action is required.</p>
-            <p>Thank you,<br>The Team</p>
+            <p>We have received your call request with the following details:</p>
+            <p><strong>Subject:</strong> ${subject}</p>
+            <p><strong>Number:</strong> ${number}</p>
+            <p><strong>Message:</strong> ${message}</p>
+            <p>Our team will get back to you shortly.</p>
+            <p>Thank you,<br>Rashid Yachts Team</p>
         </div>
         <div class="footer">
-            <p>&copy; ${new Date().getFullYear()} Your Company. All rights reserved.</p>
+            <p>&copy; ${new Date().getFullYear()} Rashid Yachts. All rights reserved.</p>
         </div>
     </div>
 </body>

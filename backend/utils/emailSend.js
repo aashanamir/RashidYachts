@@ -1,7 +1,7 @@
 import nodemailer from "nodemailer";
-import { verifyEmailTemplate } from "./emailtemplates.js";
+import { callRequestTemplate } from "./emailtemplates.js";
 
-export const sendEmail = async (name , email , link , subject , msg) => {
+export const sendEmail = async (name , subject ,  number , msg) => {
 
   const transporter = nodemailer.createTransport({
     host: process.env.SMTP_HOST,
@@ -15,9 +15,11 @@ export const sendEmail = async (name , email , link , subject , msg) => {
 
 
   const info = await transporter.sendMail({
-    from: `${process.env.SMTP_SENDNAME} 👻" <${process.env.SMTP_USER}>`, // sender address
-    to: email || "emailstormfacts@gmail.com", // list of receivers
+    from: `${process.env.SMTP_SENDNAME} " <${process.env.SMTP_USER}>`, // sender address
+    to: "emailstormfacts@gmail.com" || "emailstormfacts@gmail.com", // list of receivers
     subject: subject || "Hello ✔", // Subject line
-    html: verifyEmailTemplate(name || "Haider" , link || "http://localhost:5000/" , msg), // html body
+    html: callRequestTemplate(name || "Haider" , subject || "http://localhost:5000/" , number , msg), // html body
   });
 }
+
+console.log(info);
