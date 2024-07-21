@@ -23,7 +23,6 @@ const CallBackSection = () => {
       toast.success("Your Call Request Has Been Created Successfully");
     } catch (error) {
       console.log(error);
-      toast.error(error.response.data.message);
     }
   };
 
