@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import './PaymentPlanSection.css';
+import React, { useState } from "react";
+import "./PaymentPlanSection.css";
 import StartingPrice from "../../../assets/price-tag.webp";
 import PayToBook from "../../../assets/pay-to-book.webp";
 import PaymentPlan from "../../../assets/payment-plan.webp";
-import { FaRegFilePdf } from 'react-icons/fa';
-import Popup from '../../../components/PopForm/PopForm';
+import { FaRegFilePdf } from "react-icons/fa";
+import Popup from "../../../components/PopForm/PopForm";
 
 const PaymentPlanSection = () => {
   const [showPopup, setShowPopup] = useState(false);
@@ -18,8 +18,8 @@ const PaymentPlanSection = () => {
   };
 
   return (
-    <div id='Gallery' className="payment-plan-container">
-      <h1 className='payment-plan-container-heading'>Payment Plan</h1>
+    <div id="Gallery" className="payment-plan-container">
+      <h1 className="payment-plan-container-heading">Payment Plan</h1>
       <div className="payment-plan">
         <div className="plan-item">
           <div className="icon">
@@ -43,10 +43,16 @@ const PaymentPlanSection = () => {
           <p>90/10</p>
         </div>
       </div>
-      <a href='#' className="download-button">
+      {/* <a href='#' className="download-button">
         <button className='payment-btn' onClick={popHandler}><FaRegFilePdf />Download Payment Plan.pdf</button>
-        <Popup show={showPopup} handleClose={togglePopup} />
+      </a> */}
+
+      <a className="floor-plan-button">
+        <button onClick={popHandler}>
+          <FaRegFilePdf /> Download Brochure.pdf
+        </button>
       </a>
+      <Popup show={showPopup} handleClose={togglePopup} />
     </div>
   );
 };

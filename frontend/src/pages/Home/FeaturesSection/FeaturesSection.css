@@ -20,8 +20,8 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  column-gap: 180px;
-  width: 80%;
+  column-gap: 44px;
+  width: 60%;
   margin: 50px auto;
 }
 

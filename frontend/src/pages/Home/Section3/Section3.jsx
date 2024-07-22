@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Section3.css";
 import BrochureImage from "../../../assets/about.webp"; // Replace with the correct image path
 import { FaRegFilePdf } from "react-icons/fa";
-import PopForm from '../../../components/PopForm/PopForm';
+import PopForm from "../../../components/PopForm/PopForm";
 
 const Section3 = () => {
   const [showPopup, setShowPopup] = useState(false);
@@ -38,10 +38,17 @@ const Section3 = () => {
           energy of city life, offering residents a daily retreat into both
           tranquility and glamour.
         </p>
-        <button onClick={popHandler} className="download-button">
+        {/* <button onClick={popHandler} className="download-button">
           <FaRegFilePdf />
           Download Brochure.pdf
-        </button>
+        </button> */}
+        <div style={{marginTop : "24px"}}></div>
+        <a className="floor-plan-button">
+          <button onClick={popHandler}>
+            {" "}
+            <FaRegFilePdf /> Download Brochure.pdf
+          </button>
+        </a>
 
         <PopForm show={showPopup} handleClose={togglePopup} />
       </div>

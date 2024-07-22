@@ -85,7 +85,7 @@ h1 {
   }
 
   .floor-plan-button button {
-    width: 100%;
+    /* width: 100%; */
     box-sizing: border-box;
   }
 }

@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding : 90px 0;
+  padding : 70px 0;
   height: auto;
   background-image: linear-gradient(to right, #316C7E, #4f4821);
 }
@@ -95,12 +95,11 @@
 
 @media (max-width: 1024px) {
 
-  /* For tablets and smaller devices */
   .Section3 {
     flex-direction: column;
     align-items: center;
     height: auto;
-    /* Adjust height for smaller devices */
+    padding: 20px 0;
   }
 
   .Section3 .left,
@@ -122,6 +121,8 @@
 
   .Section3 .description {
     font-size: 0.9em;
+    text-align: center;
+    margin: auto;
   }
 
   .Section3 .download-button {

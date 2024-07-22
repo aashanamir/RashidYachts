@@ -81,6 +81,11 @@ p {
 @media (max-width: 768px) {
   .content, .callback-form {
     max-width: 100%;
+    margin: auto;
+    text-align: center;
+  }
+  .callback-form{
+    margin-top: 24px;
   }
 .callback-section-container {
     flex-direction: column;
