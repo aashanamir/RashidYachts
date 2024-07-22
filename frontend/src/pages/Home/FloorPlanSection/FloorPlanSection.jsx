@@ -4,9 +4,23 @@ import Floor1 from "../../../assets/Floor1.webp";
 import Floor2 from "../../../assets/Floor1.webp";
 import Floor3 from "../../../assets/Floor3.webp";
 import { FaRegFilePdf } from 'react-icons/fa';
+import Popup from '../../../components/PopForm/PopForm';
+
+
 
 const FloorPlanSection = () => {
   const [activePlan, setActivePlan] = useState(1);
+
+  const [showPopup, setShowPopup] = useState(false);
+
+  const togglePopup = () => {
+    setShowPopup(!showPopup);
+  };
+
+  const popHandler = () => {
+    setShowPopup(!showPopup);
+  };
+
 
   const plans = {
     1: {
@@ -43,10 +57,12 @@ const FloorPlanSection = () => {
       <div className="plan-content">
         <div className="plan-details">
           <h2>{plans[activePlan].title}</h2>
-          <a href={plans[activePlan].pdf} className="floor-plan-button" download>
-            <button> <FaRegFilePdf /> Download Floor Plan.pdf</button>
+          <a className="floor-plan-button">
+            <button onClick={popHandler}> <FaRegFilePdf /> Download Floor Plan.pdf</button>
           </a>
         </div>
+        <Popup show={showPopup} handleClose={togglePopup} />
+
         <img src={plans[activePlan].img} alt={plans[activePlan].title} className="plan-image" />
       </div>
     </div>

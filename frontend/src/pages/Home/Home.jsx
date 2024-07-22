@@ -13,6 +13,7 @@ import Footer from "../../components/Footer/Footer";
 import Logo from "../../assets/ocean-point.webp";
 
 const Home = () => {
+
   return (
     <div className='home'>
       <Section1/>
@@ -27,6 +28,7 @@ const Home = () => {
       <PaymentPlanSection/>
       <FloorPlanSection/>
       <CallBackSection/>
+      
       <Footer/>
     </div>
   )
