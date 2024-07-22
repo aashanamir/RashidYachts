@@ -11,6 +11,7 @@ import FloorPlanSection from './FloorPlanSection/FloorPlanSection';
 import CallBackSection from './CallBackSection/CallBackSection';
 import Footer from "../../components/Footer/Footer";
 import Logo from "../../assets/ocean-point.webp";
+import Image from "../../assets/ocean-point-image.webp"
 
 const Home = () => {
 
@@ -20,7 +21,7 @@ const Home = () => {
       <BreakLine/>
       <Section2 />
       <BreakLine/>
-      <Section1 logo={Logo}/>
+      <Section1 logo={Logo} Image={Image}/>
       <BreakLine/>
       <Section3/>
       <FeaturesSection/>
