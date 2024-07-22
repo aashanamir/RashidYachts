@@ -30,6 +30,11 @@
   text-align: left;
 }
 
+.form-download-text{
+  font-weight: 600;
+  margin-top: 28px;
+}
+
 .form {
   display: flex;
   flex-direction: column;
