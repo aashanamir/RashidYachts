@@ -2,7 +2,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* overflow: hidden; */
 }
 
 
@@ -16,8 +15,4 @@ body{
 ::selection {
   background-color: red;
   color: white; 
-}
-
-::-webkit-file-upload-button{
-  
 }
