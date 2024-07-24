@@ -26,7 +26,7 @@ connectDb();
 
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors());
+app.use(cors(corsOptions));
 
 
 app.get("/check-env", (req, res) => {
