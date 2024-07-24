@@ -1,0 +1,37 @@
+{
+  "files": {
+    "main.css": "/static/css/main.81287001.css",
+    "main.js": "/static/js/main.df51556f.js",
+    "static/media/down.pdf": "/static/media/down.3db892a53174242961c9.pdf",
+    "static/media/ocean-cove.webp": "/static/media/ocean-cove.c3be729c69f0d2312d40.webp",
+    "static/media/about.webp": "/static/media/about.d7504179b2bc8e8a8203.webp",
+    "static/media/slide2.webp": "/static/media/slide2.08f45d82c752ac8da217.webp",
+    "static/media/ocean-point-image.webp": "/static/media/ocean-point-image.3321fb9c74c6c8c1e5eb.webp",
+    "static/media/slide3.webp": "/static/media/slide3.8d2af28a519066e6b8eb.webp",
+    "static/media/slide1.webp": "/static/media/slide1.4e74e8b828b7c4d0604a.webp",
+    "static/media/marina-views.webp": "/static/media/marina-views.7a0a1baa7485d5dd6022.webp",
+    "static/media/slide4.webp": "/static/media/slide4.c2cadf1f6e296d7954ff.webp",
+    "static/media/Floor3.webp": "/static/media/Floor3.4fcef4670ac73b2126c8.webp",
+    "static/media/Floor1.webp": "/static/media/Floor1.1f37249a02edd1b41297.webp",
+    "static/media/water.webp": "/static/media/water.b0aa467b955261bb925f.webp",
+    "static/media/cafe.webp": "/static/media/cafe.887860259ae74efc38bd.webp",
+    "static/media/park.webp": "/static/media/park.fb2c79744e116cfca982.webp",
+    "static/media/price-tag.webp": "/static/media/price-tag.4f43fa515fc8c432e9da.webp",
+    "static/media/payment-plan.webp": "/static/media/payment-plan.1ec86b24ba8d8a487b0b.webp",
+    "static/media/pay-to-book.webp": "/static/media/pay-to-book.a629b359b2f65f9fc983.webp",
+    "static/media/marina-views-logo.webp": "/static/media/marina-views-logo.3023a6c0360192338e4f.webp",
+    "static/media/private-pool.webp": "/static/media/private-pool.1ddfceb6f0619db1b59c.webp",
+    "static/media/logo.webp": "/static/media/logo.ce08fce338fdc6e58e9f.webp",
+    "static/media/ocean-point.webp": "/static/media/ocean-point.a4a2d5be9873b526965e.webp",
+    "static/media/berth.webp": "/static/media/berth.0683cfcebae153275beb.webp",
+    "static/media/gym.webp": "/static/media/gym.7d4aed1067be8f375413.webp",
+    "static/media/ocean-cove-logo.webp": "/static/media/ocean-cove-logo.dc70fee492708732cb64.webp",
+    "index.html": "/index.html",
+    "main.81287001.css.map": "/static/css/main.81287001.css.map",
+    "main.df51556f.js.map": "/static/js/main.df51556f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.81287001.css",
+    "static/js/main.df51556f.js"
+  ]
+}
