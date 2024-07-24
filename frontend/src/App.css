@@ -17,3 +17,7 @@ body{
   background-color: red;
   color: white; 
 }
+
+::-webkit-file-upload-button{
+  
+}
