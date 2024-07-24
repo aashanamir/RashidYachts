@@ -26,7 +26,13 @@ connectDb();
 
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors(corsOptions));
+app.use(cors());
+
+
+app.get("/check-env", (req, res) => {
+  res.send(process.env.FRONTEND_URL);
+});
+
 
 // Routes
 import Users from "./router/userRouter.js";

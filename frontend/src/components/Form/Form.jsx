@@ -26,8 +26,9 @@ const FormComponent = ({logo}) => {
 
   const downloadBtn = async (e) => {
     e.preventDefault();
-
+    console.log("I am before Validate");
     if (!validate()) return; 
+    console.log("I am after Validate");
 
     try {
       await axios.post(
@@ -36,6 +37,7 @@ const FormComponent = ({logo}) => {
         { headers: { "Content-Type": "application/json" } }
       );
 
+    console.log("I am after api call");
       // Trigger file download
       const link = document.createElement("a");
       link.href = download; 
@@ -44,6 +46,9 @@ const FormComponent = ({logo}) => {
       link.click();
       document.body.removeChild(link);
 
+      setEmail("");
+      setName("");
+      setPhone("");
     } catch (error) {
       console.error(error);
     }
