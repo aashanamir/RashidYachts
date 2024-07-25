@@ -25,6 +25,10 @@ export const sendCookie = (user, res, statusCode, msg) => {
     });
   }
 
+
+  res.on('finish', () => {
+    console.log("Response headers:", res.getHeaders());
+  });
   // Debugging: Check if the cookie is set correctly
   console.log("Cookie set:", res.get('Set-Cookie'));
 }
