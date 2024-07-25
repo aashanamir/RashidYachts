@@ -20,7 +20,7 @@ export const createCallBack = catchAsyncError(async (req, res, next) => {
   // Save the document
   await newDetail.save();
 
-  await sendEmail(name , `New CallBack Request ${name}` , phone , `${name} has been requested for a call from ${phone}`);
+  // await sendEmail(name , `New CallBack Request ${name}` , phone , `${name} has been requested for a call from ${phone}`);
 
   res.status(201).json({
     success: true,

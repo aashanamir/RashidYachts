@@ -6,40 +6,37 @@ import { sendEmail } from "../utils/emailSend.js";
 
 
 export const createDetails = catchAsyncError(async (req, res, next) => {
-  try {
-    const { name, email, phone } = req.body;
 
-    if (!name || !email || !phone) {
-      return next(new ErrorHandler('All fields are required', 400));
-    }
+  const { name, email, phone } = req.body;
 
-    // Validate email
-    if (email &&!validator.isEmail(email)) {
-      return next(new ErrorHandler('Invalid email format', 400));
-    }
-
-
-    // Create new document
-    const newDetail = new DownloadBrochure({
-      name: name || "Download Without Name",
-      email: email || "Download Without Email",
-      phone: "+" + phone,
-    });
-
-    // Save the document
-    await newDetail.save();
-
-
-    await sendEmail(name, `New Broucher Download By ${name}`, phone, `${name} his Phone Number is ${phone} You can Contact Him`);
-
-    res.status(201).json({
-      success: true,
-      message: 'Details created successfully',
-      data: newDetail
-    });
-  } catch (error) {
-    return next(new ErrorHandler('Server error', 500));
+  if (!name || !email || !phone) {
+    return next(new ErrorHandler('All fields are required', 400));
   }
+
+  // Validate email
+  if (email && !validator.isEmail(email)) {
+    return next(new ErrorHandler('Invalid email format', 400));
+  }
+
+
+  // Create new document
+  const newDetail = new DownloadBrochure({
+    name: name || "Download Without Name",
+    email: email || "Download Without Email",
+    phone: "+" + phone,
+  });
+
+  // Save the document
+  await newDetail.save();
+
+
+  await sendEmail(name, `New Broucher Download By ${name}`, phone, `${name} his Phone Number is ${phone} You can Contact Him`);
+
+  res.status(201).json({
+    success: true,
+    message: 'Details created successfully',
+    data: newDetail
+  });
 });
 
 export const getAllDetails = catchAsyncError(async (req, res, next) => {
