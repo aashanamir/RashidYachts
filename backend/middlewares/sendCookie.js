@@ -12,6 +12,8 @@ export const sendCookie = (user, res, statusCode, msg) => {
 
   console.log("Setting cookie with options:", cookieOptions); // Debugging statement
 
+  console.log(res.getHeaders());
+
   if (msg !== undefined) {
     res.status(statusCode).cookie("token", token, cookieOptions).json({
       success: true,
@@ -26,9 +28,5 @@ export const sendCookie = (user, res, statusCode, msg) => {
   }
 
 
-  res.on('finish', () => {
-    console.log("Response headers:", res.getHeaders());
-  });
-  
   console.log("Cookie set:", res.get('Set-Cookie'));
 }
