@@ -2,7 +2,7 @@ export const sendCookie = (user, res, statusCode, msg) => {
   const token = user.getJwtToken();
 
   const cookieOptions = {
-    httpOnly: false,
+    httpOnly: true,
     expires: new Date(Date.now() + process.env.COOKIE_EXPIRES * 24 * 60 * 60 * 1000),
     sameSite: 'None',
     secure: true,
@@ -29,6 +29,6 @@ export const sendCookie = (user, res, statusCode, msg) => {
   res.on('finish', () => {
     console.log("Response headers:", res.getHeaders());
   });
-  // Debugging: Check if the cookie is set correctly
+  
   console.log("Cookie set:", res.get('Set-Cookie'));
 }
