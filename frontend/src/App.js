@@ -28,7 +28,7 @@ function App() {
           <Route path={"/admin/download-broucher-page"} element={<DownloadBroucherPage />} />
           <Route path={"/login"} element={<LoginPage />} />
         </Routes>
-        <ToastContainer autoClose={5000} />
+        <ToastContainer autoClose={2000} />
       </div>
     </BrowserRouter>
   );

@@ -7,6 +7,7 @@ import "./Form.css";
 import axios from "axios";
 import { BASEURL } from "../../API/Baseurl";
 import download from "../../assets/down.pdf"; 
+import {toast} from "react-toastify";
 
 const FormComponent = ({logo}) => {
   const [phone, setPhone] = useState("");
@@ -26,9 +27,8 @@ const FormComponent = ({logo}) => {
 
   const downloadBtn = async (e) => {
     e.preventDefault();
-    console.log("I am before Validate");
+    toast.success("Details Submitted Successfully");
     if (!validate()) return; 
-    console.log("I am after Validate");
 
     try {
       await axios.post(
@@ -37,7 +37,8 @@ const FormComponent = ({logo}) => {
         { headers: { "Content-Type": "application/json" } }
       );
 
-    console.log("I am after api call");
+      toast.success("Download Started");
+
       // Trigger file download
       const link = document.createElement("a");
       link.href = download; 
@@ -51,6 +52,7 @@ const FormComponent = ({logo}) => {
       setPhone("");
     } catch (error) {
       console.error(error);
+      toast.error(error.response.data.message);
     }
   };
 
@@ -95,7 +97,7 @@ const FormComponent = ({logo}) => {
         />
         {errors.phone && <p className="error-message">{errors.phone}</p>}
         
-        <button type="submit" className="form-button">
+        <button className="form-button">
           <FaRegFilePdf /> Click Download Prices.pdf
         </button>
       </form>

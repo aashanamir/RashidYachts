@@ -14,7 +14,9 @@ const DownloadBroucher = () => {
 
   const handleActionSelect = async (id, action) => {
     try {
-      const { data } = await axios.delete(`${BASEURL}download/del/${id}`);
+      const { data } = await axios.delete(`${BASEURL}download/del/${id}`, {
+        withCredentials: true,
+      });
       toast.success(data.message);
     } catch (error) {
       console.log(error);
@@ -24,8 +26,10 @@ const DownloadBroucher = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`${BASEURL}download/all`);
-        setData(response.data.allDetails); 
+        const response = await axios.get(`${BASEURL}download/all`, {
+          withCredentials: true,
+        });
+        setData(response.data.allDetails);
       } catch (error) {
         console.error("Error fetching data:", error);
       }

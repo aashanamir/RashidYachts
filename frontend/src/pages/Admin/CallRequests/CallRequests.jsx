@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import './CallRequests.css'; 
-import axios from 'axios';
-import { BASEURL } from '../../../API/Baseurl';
-import { toast } from 'react-toastify';
+import React, { useEffect, useState } from "react";
+import "./CallRequests.css";
+import axios from "axios";
+import { BASEURL } from "../../../API/Baseurl";
+import { toast } from "react-toastify";
 
 const CallRequests = () => {
   const [requests, setRequests] = useState([]);
@@ -10,7 +10,9 @@ const CallRequests = () => {
 
   const fetchRequests = async () => {
     try {
-      const { data } = await axios.get(`${BASEURL}callback/all`);
+      const { data } = await axios.get(`${BASEURL}callback/all`, {
+        withCredentials: true,
+      });
       setRequests(data.data);
     } catch (error) {
       console.log(error);
@@ -19,15 +21,24 @@ const CallRequests = () => {
 
   const handleStatusChange = async (id, newStatus) => {
     try {
-      await axios.patch(`${BASEURL}callback/update/${id}`, { status: newStatus });
-      setRequests(prevRequests =>
-        prevRequests.map(request =>
+      await axios.patch(
+        `${BASEURL}callback/update/${id}`,
+        {
+          status: newStatus,
+        },
+        {
+          withCredentials: true,
+        }
+      );
+
+      setRequests((prevRequests) =>
+        prevRequests.map((request) =>
           request._id === id ? { ...request, status: newStatus } : request
         )
       );
       toast.success(`Status Updated Successfully to ${newStatus}`);
     } catch (error) {
-      toast.error('Failed to update status');
+      toast.error("Failed to update status");
     }
   };
 
@@ -37,11 +48,15 @@ const CallRequests = () => {
 
   const handleActionSelect = async (id) => {
     try {
-      const { data } = await axios.delete(`${BASEURL}callback/del/${id}`);
+      const { data } = await axios.delete(`${BASEURL}callback/del/${id}`, {
+        withCredentials: true,
+      });
       toast.success(data.message);
-      setRequests(prevRequests => prevRequests.filter(request => request._id !== id));
+      setRequests((prevRequests) =>
+        prevRequests.filter((request) => request._id !== id)
+      );
     } catch (error) {
-      toast.error(error.response?.data?.message || 'Failed to perform action');
+      toast.error(error.response?.data?.message || "Failed to perform action");
     }
     setActionRequestId(null); // Close the action dropdown
   };
@@ -71,7 +86,9 @@ const CallRequests = () => {
               <td>
                 <select
                   value={request.status}
-                  onChange={(e) => handleStatusChange(request._id, e.target.value)}
+                  onChange={(e) =>
+                    handleStatusChange(request._id, e.target.value)
+                  }
                   className="status-select"
                 >
                   <option value="New">New</option>
