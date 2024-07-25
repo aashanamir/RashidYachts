@@ -6,8 +6,8 @@ export const sendCookie = (user, res, statusCode, msg) => {
     expires: new Date(Date.now() + process.env.COOKIE_EXPIRES * 24 * 60 * 60 * 1000),
     sameSite: 'None',
     secure: true,
-    domain: 'www.rashidyachts-marina.com', // Adjust the domain
-    path: '/', // Ensure the cookie is accessible site-wide
+    // domain: 'www.rashidyachts-marina.com', 
+    path: '/', 
   };
 
   if (msg !== undefined) {
