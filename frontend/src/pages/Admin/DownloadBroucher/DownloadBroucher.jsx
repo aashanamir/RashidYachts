@@ -25,7 +25,7 @@ const DownloadBroucher = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(`${BASEURL}download/all`);
-        setData(response.data.allDetails); // Correctly set the data from the response
+        setData(response.data.allDetails); 
       } catch (error) {
         console.error("Error fetching data:", error);
       }
