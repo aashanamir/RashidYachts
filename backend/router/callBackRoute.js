@@ -7,9 +7,9 @@ const router = express.Router();
 
 // Login User ----------------------> Public
 router.route("/create").post(  createCallBack);
-router.route("/all").get(getAllCallBack);
-router.route("/del/:id").delete( deleteCallBack);
-router.route("/update/:id").patch( updateCallBack);
+router.route("/all").get(isAuthenticated , getAllCallBack);
+router.route("/del/:id").delete(isAuthenticated , deleteCallBack);
+router.route("/update/:id").patch(isAuthenticated , updateCallBack);
 
 
 export default router;

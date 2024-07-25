@@ -8,13 +8,13 @@ const app = express();
 
 // Dotenv Configuration
 config({
-  path : "./config/.env"
+  path: "./config/.env"
 })
 
 const corsOptions = {
-  origin: process.env.FRONTEND_URL, 
+  origin: process.env.FRONTEND_URL,
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-  credentials: true, 
+  credentials: true,
   optionsSuccessStatus: 204,
 };
 
@@ -37,11 +37,14 @@ app.get("/check-env", (req, res) => {
 // Routes
 import Users from "./router/userRouter.js";
 import DownloadBrochure from "./router/downloadBrochureRoute.js";
-import callBack from "./router/callBackRoute.js";
+import CallBack from "./router/callBackRoute.js";
+import Broucher from "./router/broucherRoute.js";
 
-app.use("/api/v1/user" , Users);
-app.use("/api/v1/download" , DownloadBrochure);
-app.use("/api/v1/callback" , callBack);
+
+app.use("/api/v1/user", Users);
+app.use("/api/v1/download", DownloadBrochure);
+app.use("/api/v1/broucher", Broucher);
+app.use("/api/v1/callback", CallBack);
 
 
 export default app;
