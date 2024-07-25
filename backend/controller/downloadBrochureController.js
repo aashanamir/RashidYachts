@@ -30,7 +30,7 @@ export const createDetails = catchAsyncError(async (req, res, next) => {
   await newDetail.save();
 
 
-  await sendEmail(name, `New Broucher Download By ${name}`, phone, `${name} his Phone Number is ${phone} You can Contact Him`);
+  // await sendEmail(name, `New Broucher Download By ${name}`, phone, `${name} his Phone Number is ${phone} You can Contact Him`);
 
   res.status(201).json({
     success: true,
