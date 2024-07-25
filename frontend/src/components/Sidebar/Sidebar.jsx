@@ -26,6 +26,11 @@ const Sidebar = () => {
             Download Broucher
           </Link>
         </li>
+        <li className="sidebar-item">
+          <Link to="/admin/broucher-pop" className="sidebar-link">
+            Pop Broucher
+          </Link>
+        </li>
       </ul>
     </div>
   );

@@ -3,6 +3,9 @@ import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
 import styles from './PopForm.module.css';
 import download from "../../assets/down.pdf";
+import axios from "axios";
+import { BASEURL } from '../../API/Baseurl';
+import { toast } from 'react-toastify';
 
 const PopForm = ({ show, handleClose }) => {
   const [phone, setPhone] = useState('');
@@ -21,7 +24,15 @@ const PopForm = ({ show, handleClose }) => {
     if (!validate()) return;
 
     try {
-      // Trigger file download
+
+      await axios.post(
+        `${BASEURL}broucher/create`,
+        { phone },
+        { headers: { "Content-Type": "application/json" } }
+      );
+
+      toast.success("Download Started");
+
       const link = document.createElement("a");
       link.href = download;
       link.download = "brochure.pdf"; // Set the desired file name for the download

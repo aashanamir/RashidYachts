@@ -10,6 +10,7 @@ import { useDispatch } from 'react-redux';
 import DownloadBroucherPage from './pages/Admin/DownloadBroucherPage/DownloadBroucherPage';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import PopBroucherPage from './pages/Admin/PopBroucherPage/PopBroucherPage';
 
 function App() {
   const dispatch = useDispatch();  
@@ -26,6 +27,7 @@ function App() {
           <Route path={"*"} element={<Home />} />
           <Route path={"/admin"} element={<Admin />} />
           <Route path={"/admin/download-broucher-page"} element={<DownloadBroucherPage />} />
+          <Route path={"/admin/broucher-pop"} element={<PopBroucherPage />} />
           <Route path={"/login"} element={<LoginPage />} />
         </Routes>
         <ToastContainer autoClose={2000} />

@@ -4,7 +4,7 @@ import axios from "axios";
 import { BASEURL } from "../../../API/Baseurl";
 import { toast } from "react-toastify";
 
-const DownloadBroucher = () => {
+const Broucher = () => {
   const [data, setData] = useState([]);
   const [actionRequestId, setActionRequestId] = useState(null);
 
@@ -14,7 +14,7 @@ const DownloadBroucher = () => {
 
   const handleActionSelect = async (id, action) => {
     try {
-      const { data } = await axios.delete(`${BASEURL}download/del/${id}`, {
+      const { data } = await axios.delete(`${BASEURL}broucher/del/${id}`, {
         withCredentials: true,
       });
       toast.success(data.message);
@@ -28,7 +28,7 @@ const DownloadBroucher = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`${BASEURL}download/all`, {
+        const response = await axios.get(`${BASEURL}broucher/all`, {
           withCredentials: true,
         });
         setData(response.data.allDetails);
@@ -46,8 +46,6 @@ const DownloadBroucher = () => {
         <thead>
           <tr>
             <th>SR</th>
-            <th>Name</th>
-            <th>Email</th>
             <th>Number</th>
             <th>Actions</th>
           </tr>
@@ -56,8 +54,6 @@ const DownloadBroucher = () => {
           {data.map((request, index) => (
             <tr key={index}>
               <td>{index + 1}</td>
-              <td>{request.name}</td>
-              <td>{request.email}</td>
               <td>{request.phone}</td>
               <td className="action-cell">
                 <button
@@ -87,4 +83,4 @@ const DownloadBroucher = () => {
   );
 };
 
-export default DownloadBroucher;
+export default Broucher;
