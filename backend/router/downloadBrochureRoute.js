@@ -1,6 +1,5 @@
 import express from "express";
 import { createDetails, deleteDetails, getAllDetails } from "../controller/downloadBrochureController.js";
-import {isAuthenticated} from "../middlewares/isAuth.js";
 
 const router = express.Router();
 
