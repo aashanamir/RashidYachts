@@ -39,7 +39,7 @@ const PopForm = ({ show, handleClose }) => {
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
-      setPhone("");
+      setPhone("92");
     } catch (error) {
       console.error(error);
     }

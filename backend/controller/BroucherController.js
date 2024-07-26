@@ -21,8 +21,13 @@ export const createDetails = catchAsyncError(async (req, res, next) => {
   // Save the document
   await newDetail.save();
 
+  try {
 
-  // await sendEmail(name, `New Broucher Download By ${name}`, phone, `${name} his Phone Number is ${phone} You can Contact Him`);
+    await sendEmail("" , "Broucher Download" , phone , `Broucher has been Download by ${phone}`);
+
+  } catch (error) {
+    console.log(error);
+  }
 
   res.status(201).json({
     success: true,

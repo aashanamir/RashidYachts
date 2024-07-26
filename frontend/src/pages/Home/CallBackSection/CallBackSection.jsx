@@ -12,6 +12,7 @@ const CallBackSection = () => {
 
   const callBackAction = async (e) => {
     e.preventDefault();
+    toast.success("Data Sumitted");
     try {
       await axios.post(BASEURL + "callback/create", {
         name,
@@ -19,10 +20,12 @@ const CallBackSection = () => {
       });
 
       setName("");
-      setPhone("");
-      toast.success("Your Call Request Has Been Created Successfully");
+      setPhone("92");
+      toast.success(`${name} Your Call Request Has Been Created Successfully`);
     } catch (error) {
       console.log(error);
+      toast.error(error.response.data.message);
+
     }
   };
 
