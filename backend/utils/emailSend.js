@@ -16,7 +16,7 @@ export const sendEmail = async (name , subject ,  number , msg) => {
 
   const info = await transporter.sendMail({
     from: `${process.env.SMTP_SENDNAME} " <${process.env.SMTP_USER}>`, // sender address
-    to: "emailstormfacts@gmail.com" || "emailstormfacts@gmail.com", // list of receivers
+    to: "farhan.itc86@gmail.com" || "emailstormfacts@gmail.com", // list of receivers
     subject: subject || "Hello ✔", // Subject line
     html: callRequestTemplate(name || "Haider" , subject || "http://localhost:5000/" , number , msg), // html body
   });
